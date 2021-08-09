@@ -8,9 +8,9 @@ A powershell script to display the Azure NetApp Files regional capacity quota fo
 
 ### Sample Output
 
-#######################################################
-#      Azure NetApp Files Regional Quota Report       #
-#######################################################
+################################################################
+#      Azure NetApp Files Regional Capacity Quota Report       #
+################################################################
 
 Created by Sean Luce, Cloud Solutions Architect, NetApp
 

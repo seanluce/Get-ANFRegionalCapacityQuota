@@ -28,11 +28,12 @@ $Header = @{
 $anfRegions = ('australiacentral', 'australiaeast', 'australiasoutheast', 'brazilsouth', 'canadacentral', 'canadaeast', 'centralindia', 'centralus', 'eastus', 'eastus2', 'francecentral', 'germanynorth', 'germanywestcentral', 'japaneast', 'japanwest', 'koreacentral', 'northeurope', 'norwayeast', 'norwaywest', 'southcentralus', 'southindia', 'southeastasia', 'uaenorth', 'uaecentral', 'uksouth', 'ukwest', 'westeurope', 'westus', 'westus2')
 $regionTable = @()
 ''
-'#######################################################'
-'#      Azure NetApp Files Regional Quota Report       #'
-'#######################################################'
+'################################################################'
+'#      Azure NetApp Files Regional Capacity Quota Report       #'
+'################################################################'
 ''
-'Created by Sean Luce, Cloud Solutions Architect, NetApp'
+'Created by: Sean Luce, Cloud Solutions Architect, NetApp'
+'More info: https://azure.microsoft.com/en-us/updates/azure-netapp-files-regional-capacity-quota/'
 ''
 foreach($region in $anfRegions) {
     $Parameters = @{
