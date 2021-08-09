@@ -2,18 +2,20 @@
 
 A powershell script to display the Azure NetApp Files regional capacity quota for each region within your subscription.
 
-### Add your subscription ID and service principal credentials to lines 2 through 5.
+### How to run
 
-### Run the script: ./Get-ANFRegionalCapacityReport
+1. Add your subscription ID and service principal credentials to lines 2 through 5.
+
+2. Run the script: ./Get-ANFRegionalCapacityReport
 
 ### Sample Output
-
+```
 ################################################################
 #      Azure NetApp Files Regional Capacity Quota Report       #
 ################################################################
 
-Created by Sean Luce, Cloud Solutions Architect, NetApp
-
+Created by: Sean Luce, Cloud Solutions Architect, NetApp
+More info: https://azure.microsoft.com/en-us/updates/azure-netapp-files-regional-capacity-quota/
 
 Region             Default Quota Current Quota
 ------             ------------- -------------
@@ -46,3 +48,4 @@ ukwest                        25            25
 westeurope                    25            25
 westus                        25            25
 westus2                       25            25
+```
