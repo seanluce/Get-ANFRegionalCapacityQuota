@@ -25,7 +25,7 @@ $Header = @{
 ####
 
 ## Get and display regional quotas for each region ##
-$anfRegions = ('australiacentral', 'australiaeast', 'australiasoutheast', 'brazilsouth', 'canadacentral', 'canadaeast', 'centralindia', 'centralus', 'eastus', 'eastus2', 'francecentral', 'germanynorth', 'germanywestcentral', 'japaneast', 'japanwest', 'koreacentral', 'northeurope', 'norwayeast', 'norwaywest', 'southcentralus', 'southindia', 'southeastasia', 'uaenorth', 'uaecentral', 'uksouth', 'ukwest', 'westeurope', 'westus', 'westus2')
+$anfRegions = ('australiacentral', 'australiaeast', 'australiasoutheast', 'brazilsouth', 'canadacentral', 'canadaeast', 'centralindia', 'centralus', 'eastus', 'eastus2', 'francecentral', 'germanynorth', 'germanywestcentral', 'japaneast', 'japanwest', 'koreacentral', 'northcentralus', 'northeurope', 'norwayeast', 'norwaywest', 'southcentralus', 'southindia', 'southeastasia', 'uaenorth', 'uaecentral', 'uksouth', 'ukwest', 'westeurope', 'westus', 'westus2')
 $regionTable = @()
 ''
 '################################################################'
@@ -41,7 +41,12 @@ foreach($region in $anfRegions) {
         Uri = 'https://management.azure.com/subscriptions/' + $subId + '/providers/Microsoft.NetApp/locations/' + $region + '/quotaLimits?api-version=2021-06-01'
         Header = $header
     }
-    $quotas = Invoke-RestMethod @Parameters
+    try {
+        $quotas = Invoke-RestMethod @Parameters
+    }
+    catch {
+        "Unable to get info from " + $region + " region."
+    }
     $regionTable += [PSCustomObject]@{
         Region = $region;
         'Default Quota' = $quotas.totalTiBsPerSubscription.default;
